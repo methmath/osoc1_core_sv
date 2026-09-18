@@ -1,0 +1,20 @@
+RF Write-Back Mux
+
+Key Files
+
+1. Makefile (communication between Python and Icarus)
+2. rf_wb_mux.sv (main SystemVerilog RTL)
+3. python_stimulus_rf_wb_mux.py (deterministic stimulus)
+4. python_random_stim_rf_wb_mux.py (random verification)
+5. waveforms/rf_wb_mux.fst (simulation waveform)
+
+Simulation Flow
+
+Icarus <---- VPI ----> Python (Cocotb)
+
+Function
+
+d2r_sel_i = 00 -> ALU result
+d2r_sel_i = 01 -> LAU result
+d2r_sel_i = 10 -> PC + 4
+d2r_sel_i = 11 -> 0
